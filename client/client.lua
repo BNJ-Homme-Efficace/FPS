@@ -49,7 +49,7 @@ end)
                     Citizen.Wait(300)
                 end,
             });
-            
+        
             RageUI.Button('Low', '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
                 onSelected = function()
 		            print("^6Woah merci BNJ")					
@@ -133,7 +133,8 @@ end)
                     SetWindSpeed(0.0)
                     Citizen.Wait(300)
                 end,
-            });
+            });	
+					
             RageUI.Separator("~r~Par default")
                 RageUI.Button('Res', '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
                     onSelected = function()
@@ -144,7 +145,7 @@ end)
                         Citizen.Wait(300)
                     end,
                 });   
-                
+					
         end, function()
 		end)
         if activerfps then
