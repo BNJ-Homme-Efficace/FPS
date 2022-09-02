@@ -1,4 +1,4 @@
-local menufps = RageUI.CreateMenu("","Menu FPS",  nil, nil, "shopui_title_fps", "shopui_title_fps")	 
+local menufps = RageUI.CreateMenu("",Strings['settings'],  nil, nil, "shopui_title_fps", "shopui_title_fps")	 
 
 RegisterKeyMapping('+fps', 'Menu FPS', 'KEYBOARD', '')
 
@@ -13,8 +13,8 @@ end)
             local activerfps = false
             RageUI.IsVisible(menufps, function()
             activerfps = true
-            RageUI.Separator("~r~Menu FPS")
-			RageUI.Button('Hight', '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
+            RageUI.Separator(Strings['menufps'])
+			RageUI.Button(Strings['hight'], '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
 				onSelected = function()
                     print("^6Woah merci BNJ")
                     SetTimecycleModifier('MP_casino_apartment_changing')
@@ -22,7 +22,7 @@ end)
 				end,
 			});
             
-             RageUI.Button('Med', '',  { RightBadge = RageUI.BadgeStyle.None},  true, {
+             RageUI.Button(Strings['med'], '',  { RightBadge = RageUI.BadgeStyle.None},  true, {
                 onSelected = function()
 		            print("^6Woah merci BNJ")
                     SetTimecycleModifier('tunnel')
@@ -49,8 +49,8 @@ end)
                     Citizen.Wait(300)
                 end,
             });
-        
-            RageUI.Button('Low', '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
+            
+            RageUI.Button(Strings['low'], '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
                 onSelected = function()
 		            print("^6Woah merci BNJ")					
                     SetTimecycleModifier('yell_tunnel_nodirect')
@@ -77,9 +77,8 @@ end)
                     Citizen.Wait(300)
                 end,
             });
-            
-            RageUI.Separator("~r~Optimisation + FPS")
-            RageUI.Button('LOW avec optimisation', '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
+            RageUI.Separator(Strings['opti'])
+            RageUI.Button(Strings['superopti'], '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
                 onSelected = function()
 		            print("^6Woah merci BNJ")
                     --------------------------------------------------------------------------------
@@ -87,7 +86,7 @@ end)
                     --------------------------------------------------------------------------------
                     if not HasModelLoaded(modelHash) then
                     RequestModel(modelHash)BeginTextCommandBusyString('STRING')
-                    AddTextComponentSubstringPlayerName(('Optimisation 10%'))
+                    AddTextComponentSubstringPlayerName((Strings['opti1']))
                     EndTextCommandBusyString(4)
                     Citizen.Wait(5000)
                     RemoveLoadingPrompt()
@@ -95,7 +94,7 @@ end)
                     ClearHelp()
                     ClearNotificationsPos()
                     RequestModel(modelHash)BeginTextCommandBusyString('STRING')
-                    AddTextComponentSubstringPlayerName(('Optimisation 50%'))
+                    AddTextComponentSubstringPlayerName((Strings['opti2']))
                     EndTextCommandBusyString(4)
                     Citizen.Wait(3000)
                     RemoveLoadingPrompt()
@@ -105,7 +104,7 @@ end)
                     ClearGpsRaceTrack()
                     ClearThisPrint()
                     RequestModel(modelHash)BeginTextCommandBusyString('STRING')
-                    AddTextComponentSubstringPlayerName(('Optimisation 100%'))
+                    AddTextComponentSubstringPlayerName((Strings['opti3']))
                     EndTextCommandBusyString(4)
                     Citizen.Wait(4000)
                     RemoveLoadingPrompt()
@@ -134,10 +133,9 @@ end)
                     SetWindSpeed(0.0)
                     Citizen.Wait(300)
                 end,
-            });	
-					
-            RageUI.Separator("~r~Par default")
-                RageUI.Button('Res', '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
+            });
+            RageUI.Separator(Strings['default'])
+                RageUI.Button(Strings['rest'], '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
                     onSelected = function()
                         print("^6Woah merci BNJ")
                         SetTimecycleModifier()
@@ -146,7 +144,7 @@ end)
                         Citizen.Wait(300)
                     end,
                 });   
-					
+                
         end, function()
 		end)
         if activerfps then
