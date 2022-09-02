@@ -77,6 +77,7 @@ end)
                     Citizen.Wait(300)
                 end,
             });
+            
             RageUI.Separator("~r~Optimisation + FPS")
             RageUI.Button('LOW avec optimisation', '',  { RightBadge = RageUI.BadgeStyle.Star},  true, {
                 onSelected = function()
